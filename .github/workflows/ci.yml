@@ -14,9 +14,13 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v7.0.1
 
+
+
     - name: Run script
       id: script-run
-      run: ./check-logs.sh ./logs > result.txt
+      run: |
+      chmod +x check-logs.sh
+      ./check-logs.sh ./logs > result.txt
       continue-on-error: true
 
 
